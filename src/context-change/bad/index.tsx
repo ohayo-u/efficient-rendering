@@ -1,14 +1,14 @@
-import { useSomethingContext } from "../context";
+import { useCountContext } from "../context";
 import { Child } from "./child";
 
 export function Bad() {
-  const { something, increment } = useSomethingContext();
+  const { count, increment } = useCountContext();
 
   console.log("Bad render");
 
   return (
     <div>
-      <p>something: {something}</p>
+      <p>count: {count}</p>
       <button onClick={increment}>increment</button>
 
       {/* ❌ Re-rendered when context is changed */}
